@@ -1,0 +1,15 @@
+<app-elixir-filter (filtersUpdated)="updateFilters($event)"></app-elixir-filter>
+
+<div *ngIf="isLoading(); else content">
+  <p class="loading">Loading elixirs...</p>
+</div>
+
+<ng-template #content>
+  <div *ngIf="error(); else list">
+    <p class="error">{{ error() }}</p>
+  </div>
+
+  <ng-template #list>
+    <app-elixir-list [elixirs]="elixirs"></app-elixir-list>
+  </ng-template>
+</ng-template>

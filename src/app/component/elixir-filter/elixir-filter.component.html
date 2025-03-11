@@ -1,0 +1,9 @@
+<div class="filters">
+    <input [(ngModel)]="filters.name" placeholder="Name">
+    <input [(ngModel)]="filters.difficulty" placeholder="Difficulty">
+    <input [(ngModel)]="filters.ingredient" placeholder="Ingredient">
+    <input [(ngModel)]="filters.inventorFullName" placeholder="Inventor Full Name">
+    <input [(ngModel)]="filters.manufacturer" placeholder="Manufacturer">
+    <button (click)="applyFilters()">Apply Filters</button>
+    <button (click)="resetFilters()">Reset</button>
+</div>

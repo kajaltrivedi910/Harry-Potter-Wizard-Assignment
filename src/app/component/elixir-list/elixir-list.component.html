@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Difficulty</th>
+      <th>Ingredients</th>
+      <th>Inventors</th>
+      <th>Manufacturer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let elixir of elixirs()">
+      <td>{{ elixir.name }}</td>
+      <td>{{ elixir.difficulty }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let ingredient of elixir.ingredients">{{ ingredient.name }}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let inventor of elixir.inventors">
+            {{ inventor.firstName }} {{ inventor.lastName }}
+          </li>
+        </ul>
+      </td>
+      <td>{{ elixir.manufacturer || 'N/A' }}</td>
+    </tr>
+    <tr *ngIf="elixirs().length === 0">
+      <td colspan="5" class="no-data">No elixirs found.</td>
+    </tr>
+  </tbody>
+</table>
